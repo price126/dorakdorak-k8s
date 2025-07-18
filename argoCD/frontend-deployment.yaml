@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: dorakdorak-frontend
-          image: prixe/dorakdorak-frontend:latest
+          image: prixe/dorakdorak-frontend:v2
           ports:
             - containerPort: 80
