@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dorakdorak-frontend
+  labels:
+    app: dorakdorak-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dorakdorak-frontend
+  template:
+    metadata:
+      labels:
+        app: dorakdorak-frontend
+    spec:
+      containers:
+        - name: dorakdorak-frontend
+          image: prixe/dorakdorak-frontend:latest
+          ports:
+            - containerPort: 80
