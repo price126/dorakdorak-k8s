@@ -11,7 +11,7 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
-          docker.build('prixe/dorakdorak-frontend:latest')
+          docker.build('prixe/dorakdorak-frontend:v3')
         }
       }
     }
@@ -20,7 +20,7 @@ pipeline {
       steps {
         withDockerRegistry([credentialsId: 'dockerhub-creds', url: '']) {
           script {
-            docker.image('prixe/dorakdorak-frontend:latest').push()
+            docker.image('prixe/dorakdorak-frontend:v3').push()
           }
         }
       }
